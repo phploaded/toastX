@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>toastX Developer Documentation</title>
+<link rel="stylesheet" href="toastx/demo.css">
+<link rel="stylesheet" href="toastx/toastx.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="toastx/toastx.js"></script>
+<script src="toastx/demo.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/a11y-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+</head>
+<body class="body-">
+
+
+<div class="body-ctr">
+<div class="ctr">
+    <h1>Demo & Documentation for jQuery plugin toastX</h1>
+    <p>toastX is a lightweight and customizable JavaScript notification library based on jQuery. It supports different types of notifications, custom positions, animations, icons, and additional CSS classes.</p>
+    <h2>1. Live demo examples</h2>
+    <div class="example">
+        <h3>Example 1a: Default Toast</h3>
+		<p>Default form of toast will be shown without using any option. After clicking button, look at the bottom center of screen. Clicking button multiple times will generate same toast again. Default toast stays for 3 seconds. It supports html tags.</p>
+        <button id="example1a-button">Show Default Toast</button>
+<pre><code class="language-js"><p>$.toastX(&#39;&lt;b&gt;Damn!&lt;/b&gt; I am toast. I mean literally!!&#39;);</p></code></pre>
+
+        <h3>Example 1b: Custom Timeout duration</h3>
+		<p>You can use <b>duration</b> setting to change the default timeout of 3 seconds in micro seconds(ms).</p>
+        <button id="example1b-button">Custom duration</button>
+<pre><code class="language-js"><p>$.toastX(&#39;I am a custom duration toast set to timeout in 8 seconds.&#39;, {<br />
+	duration: 8000 // ms is being used, 1000ms = 1 second<br />
+});</p></code></pre>
+
+
+        <h3>Example 1c: Basic icons</h3>
+		<p>You can use <b>icon</b> setting to show an icon class defined in css. 4 basic icons are provided with the plugin. You can add more if you want to through css.</p>
+        <button id="example1c-button">Icon examples</button>
+<pre><code class="language-js"><p>$.toastX(&#39;This is a toast with an icon&#39;, {<br />
+icon: &#39;success&#39;, // Adds the class &#39;toastx-icon-success&#39;<br />
+});</p></code></pre>
+
+    </div>
+
+    <div class="example">
+        <h3>Example 2: Different types(css classes) of toast</h3>
+		<p>We have created various color combinations to make lots of toast design type. Clicking the demo buttons will show various toasts with their type values.</p>
+        <button id="example2a-button">Flat color types</button>
+		<button id="example2b-button">Gradient types</button>
+		<button id="example2c-button">Diagonal Gradient types</button>
+		<pre><code class="language-js"><p>$.toastX(&#39;I am toast of &lt;i&gt;type&lt;/i&gt; &lt;b&gt;green&lt;/b&gt;!&#39;, {<br />
+	type: &#39;green&#39;<br />
+});</p></code></pre>
+<p>You can create your own designs for toast. Let&#39;s say, if you want to create <em>type</em> named <b>apple</b> , simply create a css class <b>toastx-apple</b> in the included css file and then directly use it in js. Example :</p>
+ 		<pre><code class="language-css"><p>.toastx-apple {<br />
+&nbsp;&nbsp;&nbsp; background-color: green;<br />
+}</p></code></pre>
+   </div>
+
+    <div class="example">
+        <h3>Example 3: Custom css classes</h3>
+		<p>You can define and use your own css, through <b>additionalClass</b> property. We have pre-defined some classes that can be used as per your need. Click below buttons for demo.</p>
+		<ul>
+			<li>Border classes : <b>border-1x</b>, <b>border-2x</b>, <b>border-3x</b>, <b>border-4x</b></li>
+			<li>For curved corners : <b>curved-1x</b>, <b>curved-2x</b>, <b>curved-4x</b>, <b>curved-6x</b></li>
+			<li>For fully round corners : <b>round</b></li>
+			<li>To simulate paused toast, <b>pausedx</b> class can be used and set a very long duration in setting. It blinks toasts slowly with some time gap, so that the toast feels paused.</li>
+			<li>Moving background effect can be create with : <b>movebg</b></li>
+			<li>Thick borders and inset shadow gives depth like feel with class : <b>depth</b></li>
+		</ul>
+<pre><code class="language-js"><p>$.toastX(&#39;My borders are 4x thick!&#39;, {<br />
+	additionalClass:&#39;border-4x&#39;<br />
+});</p></code></pre>
+
+<p>You can create your own custom classes for use. Let&#39;s say, if you want to create <em>additionalClass</em> named <b>dashed-1x</b> , simply create a css class <b>dashed-1x</b> in the included css file and then directly use it in js. Example :</p>
+
+<pre><code class="language-css"><p>.dashed-1x {<br />
+	border: 1px dashed #fff;<br />
+}</p></code></pre>
+        <button id="example3a-button">border class</button>
+		<button id="example3g-button">curved class</button>
+		<button id="example3b-button">round class</button>
+		<button id="example3c-button">pausedx class</button>
+		<button id="example3d-button">depth class</button>
+		<button id="example3e-button">movebg class</button>
+		<p>You can combine these properties to create even more designs.</p>
+		<button id="example3f-button">movebg + depth + round</button>
+		<button id="example3h-button">border + curved</button>
+		<blockquote>Although both <b>additionalClass</b> and <b>type</b> options are assigned to same element, they both can do same thing, the intention here is different. Former is for additional modification but latter is for main toast ui.</blockquote>
+    </div>
+	
+	<div class="example">
+        <h3>Example 4a: Progress bar classes!</h3>
+		<p>The progress bar is automatically enabled by default. You can view and choose from below demo. All predefined values are shown below</p>
+	<div id="demo-progress-bars"></div>
+<pre><code class="language-js"><p>$.toastX(&#39;This toast would have striped progress bar!&#39;, {<br />
+	showProgress:true, // true by default, make it false to hide progress bar<br />
+	progressBarClass:&#39;toastx-stripes-bar&#39;<br />
+});</p></code></pre>
+<p>You can create your own <i>progressBarClass</i> for use in similar way as you would for a <i>type</i> class.</p>
+    </div>
+	
+	<div class="example">
+        <h3>Example 4b: Progress bar color!</h3>
+		<p>The green color of the indicator below the toast can be set as well.</p>
+	    <div id="colorPickerContainer">
+        <label for="colorPicker">Choose Progress Bar Color: </label>
+        <input type="color" id="colorPicker" value="#99FF00">
+        <button id="applyColorButton">Show Toast with Selected Color</button>
+		</div>
+<pre><code class="language-js"><p>$.toastX(&quot;Toast with custom progress bar color!&quot;, {<br />
+	progressBarColor: &quot;#FF5733&quot; // Set a custom progress bar color<br />
+});</p></code></pre>
+    </div>
+		
+	<div class="example">
+        <h3>Example 5: All possible positions</h3>
+		<p>Clicking button below will show a notification in each of the possible 9 positions of screen, stating the value in the toast. Also note that multiple toasts can be shown at multiple positions.</p>
+        <button id="example5-button">Example of different positions</button>
+<pre><code class="language-js"><p>$.toastX(&#39;This toast is displayed at bottom-center position&#39;, {<br />
+	position: &#39;top-left&#39; // defaults to bottom-center<br />
+});</p></code></pre>
+    </div>
+	
+	<div class="example">
+        <h3>Example 6: Animations</h3>
+		<p>Clicking each button will show how the animated toast will look at different positions. </p>
+		<div id="demo-animations"></div>
+<pre><code class="language-js"><p>$.toastX(&#39;This toast should appear and close with flipx effect.&#39;, {<br />
+	animation:&#39;flipx&#39; // defaults to none<br />
+});</p></code></pre>
+<p>All animations are created purely with css classes. Let's understand with an example. When you apply <b>fade</b> <i>animation</i>, on creating the toast, <b>toastx-animate-fade</b> class is added. After 0.4 seconds, its removed so that toast becomes non animated. Similarly, just 0.4 seconds before closing the toast <b>toastx-animate-fade-close</b> is added which contains effects for closing state. With that being said, you can make different for creating and destroying toasts in your own css classes.</p>
+    </div>
+	
+		<div class="example">
+        <h3>Example 7: Callback Functions</h3>
+		<p>The toastX plugin provides the following lifecycle callbacks for better control:</p>
+    <ul>
+        <li><strong>onBeforeCreate :</strong> Use this to execute actions before the toast is created. For instance, validate data or log events</li>
+        <li><strong>onCreate :</strong> Use this to execute actions immediately after the toast appears</li>
+        <li><strong>onBeforeClose :</strong> Use this to execute actions before the toast starts closing, like prompting the user</li>
+        <li><strong>onClose :</strong> Use this to execute actions after the toast is completely removed, such as cleanup tasks</li>
+    </ul>
+		<button id="example7-button">Show Toast with All Callbacks</button>
+<pre><code class="language-js"><p>$('#example7-button').click(function () {
+	$.toastX('Toast with all callbacks!', {
+		onBeforeCreate: function() {
+			alert('onBeforeCreate: Getting ready to create toast.');
+		},
+		onCreate: function() {
+			alert('onCreate: Toast is created and will be visible after this.');
+		},
+		onBeforeClose: function() {
+			alert('onBeforeClose: Toast is about to close.');
+		},
+		onClose: function() {
+			alert('onClose: Toast will be removed after this.');
+		}
+	, type:'warning'});
+});</p></code></pre>
+<p>All animations are created purely with css classes. Let's understand with an example. When you apply <b>fade</b> <i>animation</i>, on creating the toast, <b>toastx-animate-fade</b> class is added. After 0.4 seconds, its removed so that toast becomes non animated. Similarly, just 0.4 seconds before closing the toast <b>toastx-animate-fade-close</b> is added which contains effects for closing state. With that being said, you can make different for creating and destroying toasts in your own css classes.</p>
+    </div>
+	
+		<div id="example8" class="example">
+        <h3>Example 8: Clearing positions</h3>
+		<p>Sometimes, you may need to remove all toasts or a particular screen position. In that scenario, you can do following :</p>
+<pre><code class="language-js"><p>$.toastX.removeAll();&nbsp; // deletes all toasts from all positions<br />
+$.toastX.removeAll(&#39;top-right&#39;); // deletes all toasts only from specified position</p></code></pre>
+    </div>
+
+    <h2>2. Installation</h2>
+    <p>Include the following files in your project:</p>
+    <pre><code class="language-html"><p>&lt;link rel=&quot;stylesheet&quot; href=&quot;toastx/toastx.css&quot;&gt;<br />
+&lt;script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;&gt;&lt;/script&gt;<br />
+&lt;script src=&quot;toastx/toast.js&quot;&gt;&lt;/script&gt;</p></code></pre>
+
+    <h2>3. Usage Instructions</h2>
+    <p>Just like any jQuery plugin, you can use it inside functions or events</p>
+<pre><code class="language-js"><p>$(&#39;#example&#39;).click(function () { // on clicking id = example<br />
+	$.toastX(&#39;This toast example includes almost all basic settings.&#39;, {<br />
+		type:&#39;disco&#39;, // defaults to default<br />
+		animation:&#39;flipx&#39;, // defaults to none<br />
+		duration:5000, // defaults to 3000<br />
+		position:&#39;top-center&#39;, // defaults to bottom-center<br />
+		progressBarClass:&#39;toastx-stripes-bar&#39;, // defaults to none<br />
+		additionalClass:&#39;movebg&#39;, // defaults to none<br />
+		showProgress:true, // true by default<br />
+		barColor:&#39;#FF51B5&#39; // progress bar color, defaults to #99FF00<br />
+	});<br />
+});</p></code></pre>
+
+
+    <h2>4. Configuration Options</h2>
+    <table class="tbl">
+        <tr>
+            <th>Option</th>
+            <th>Description</th>
+            <th style="width:150px;">Default values</th>
+        </tr>
+        <tr>
+            <td><code>type</code></td>
+            <td>Type of toast notification. Options: <code>success</code>, <code>error</code>, <code>info</code>, <code>warning</code>.</td>
+            <td><em>None</em></td>
+        </tr>
+        <tr>
+            <td><code>position</code></td>
+            <td>Position of the toast. Options: <code>top-left</code>, <code>top-right</code>, <code>bottom-left</code>, <code>bottom-right</code>, <code>top-center</code>, <code>bottom-center</code>, <code>center-center</code>.</td>
+            <td><code>bottom-center</code></td>
+        </tr>
+        <tr>
+            <td><code>duration</code></td>
+            <td>Time (in milliseconds) before the toast disappears.</td>
+            <td><code>3000</code></td>
+        </tr>
+        <tr>
+            <td><code>icon</code></td>
+            <td>URL or CSS class for the toast icon.</td>
+            <td><em>None</em></td>
+        </tr>
+        <tr>
+            <td><code>animation</code></td>
+            <td>Animation type for showing and hiding the toast. Options: <code>fade</code>, <code>slide</code>, <code>reveal</code>, <code>wiggle</code>, <code>blur</code>, <code>zoom</code>, <code>flipx</code>, <code>flipy</code>, <code>flipz</code>, <code>flipxz</code>, <code>flipyz</code>, <code>circle</code>, <code>none</code>.</td>
+            <td><code>none</code></td>
+        </tr>
+        <tr>
+            <td><code>additionalClass</code></td>
+            <td>Additional CSS class to style the toast.</td>
+            <td><em>None</em></td>
+        </tr>
+        <tr>
+            <td><code>progressBarClass</code></td>
+            <td>Additional CSS class to style the progress bar. Options : <code>toast-stripes-bar</code>, <code>toast-blinking-bar</code>, <code>toast-stripes-bar moving</code></td>
+            <td><em>None</em></td>
+        </tr>
+		<tr>
+            <td><code>barColor</code></td>
+            <td>Basic color of progress bar!</td>
+            <td><code>#99FF00</code></td>
+        </tr>
+		<tr>
+            <td><code>showProgress</code></td>
+            <td>Whether to show progress bar or hide. Boolean. Options : <code>true</code>, <code>false</code></td>
+            <td><code>true</code></td>
+        </tr>
+		<tr>
+            <td><code>onBeforeCreate</code></td>
+            <td>Execute before the toast is created.</td>
+            <td><em>None</em></td>
+		</tr>
+		<tr>
+            <td><code>onCreate</code></td>
+            <td>Execute immediately after the toast appears.</td>
+            <td><em>None</em></td>
+        </tr>
+		<tr>
+            <td><code>onBeforeClose</code></td>
+            <td>Execute before the toast starts closing, like prompting the user.</td>
+            <td><em>None</em></td>
+        </tr>
+		<tr>
+            <td><code>onClose</code></td>
+            <td>Execute after the toast is completely removed, such as cleanup tasks.</td>
+            <td><em>None</em></td>
+        </tr>
+		<tr>
+            <td><code>$.toastX.removeAll();</code></td>
+            <td>Removes toasts from specified position or from all positions. Refer <a href="#example8">example 8</a>.</td>
+            <td><em>None</em></td>
+        </tr>
+    </table>
+
+
+<p>You have reached the end of toastX documentation page. If you have more questions you can reach me via <a target="_blank" href="https://phploaded.com/contact/">phploaded's contact page</a>. No gurantees but i will try to look into it as soon as possible.</p>
+
+	
+<div class="text-center">A product of <a href="http://phploaded.com">phploaded.com</a></div>
+</div>
+</div>
+</body>
+</html>

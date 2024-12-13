@@ -1,0 +1,641 @@
+/* ToastX Container Positions */
+.toastx-container {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+}
+.toastx-top-left { top: 10px; left: 10px; }
+.toastx-top-center { top: 10px; left: 50%; transform: translateX(-50%); }
+.toastx-top-right { top: 10px; right: 10px; }
+
+.toastx-center-left { top: 50%; left: 10px; transform: translateY(-50%); }
+.toastx-center-center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.toastx-center-right { top: 50%; right: 10px; transform: translateY(-50%); }
+
+.toastx-bottom-left { bottom: 10px; left: 10px; }
+.toastx-bottom-center { bottom: 10px; left: 50%; transform: translateX(-50%); }
+.toastx-bottom-right { bottom: 10px; right: 10px; }
+
+/* Toast Styles */
+.toastx-toast {
+  margin: 5px 0;
+  pointer-events: auto;
+  padding: 10px 15px 15px 15px;
+  border-radius: 0;
+  color: #fff;
+  box-shadow: 0 0 2px #000;
+  opacity: 1;
+  transition: all 0.4s;
+  max-width: 300px;
+  word-wrap: break-word;
+  display: block;
+  align-items: center;
+  font: 12px verdana, tahoma, sans-serif;
+  text-indent:0;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  position: relative;
+  border: 0;
+transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(0); /* Predefined initial values */
+transform-origin: center; /* Ensures smooth rotation around the center */
+backface-visibility: visible; /* Hides the backface during flips for better visuals */
+perspective: 1000px; /* Adds a 3D perspective for rotation */
+transform-style: preserve-3d;
+}
+
+/* Icon Styles */
+.toastx-icon {
+width: 40px;
+height: 40px;
+background-size: cover;
+background-position: center;
+margin: 0 10px 5px 0;
+float: left;
+}
+
+.toastx-icon-error{background-image:url(svg/danger.svg)}
+.toastx-icon-info{background-image:url(svg/info.svg)}
+.toastx-icon-warning{background-image:url(svg/warning.svg)}
+.toastx-icon-success{background-image:url(svg/success.svg)}
+
+.toastx-default.toastx-toast{
+box-shadow: 0 0 2px #fff;
+border-color:#fff;
+}
+
+.round.toastx-toast{
+border-radius: 50px;
+}
+
+.depth.toastx-toast{
+border: 2px solid #fff;
+box-shadow: 0 0 2px #000, 0 0 4px #000 inset;
+}
+
+.border-1x.toastx-toast{
+border: 1px solid #fff;
+}
+
+.border-2x.toastx-toast{
+border: 2px solid #fff;
+}
+
+.border-3x.toastx-toast{
+border: 3px solid #fff;
+}
+
+.border-4x.toastx-toast{
+border: 4px solid #fff;
+}
+
+.curved-1x.toastx-toast{
+border-radius:2px;
+}
+
+.curved-2x.toastx-toast{
+border-radius:4px;
+}
+
+.curved-4x.toastx-toast{
+border-radius:8px;
+}
+
+.curved-6x.toastx-toast{
+border-radius:12px;
+}
+
+.movebg.toastx-toast{
+background-size: 200% 200%;
+animation: movebg 2s ease infinite;
+}
+
+.blink.toastx-toast{
+animation: blinker 0.5s linear 3;
+}
+
+.pausedx.toastx-toast{
+animation: pausedx 2s linear infinite;
+}
+
+/* Toast Types */
+.toastx-success { background-color: #4caf50; }
+.toastx-error { background-color: #f44336; }
+.toastx-info { background-color: #2196f3; }
+.toastx-warning { background-color: #ff9800; }
+.toastx-red{background-image:linear-gradient(to bottom left, #e14001, #9C2C01);}
+.toastx-grass{background-image:linear-gradient(to bottom left, #369500, #9ECC00);}
+.toastx-khaki{background-image:linear-gradient(to bottom left, #806D00, #CCAD00);}
+.toastx-teal{background-image: linear-gradient(to bottom left, #006659, #00ceb1);}
+.toastx-blue{background-image: linear-gradient(to bottom left, #0F4779, #1A7CD2);}
+.toastx-purple{background-image: linear-gradient(to bottom left, #3b0082, #9d4bff);}
+.toastx-rosy{background-image: linear-gradient(to bottom left, #b5015c, #ff0083);}
+.toastx-amber{background-image: linear-gradient(to bottom left, #fb8200, #A65602);}
+.toastx-green {background-image: linear-gradient(to bottom left, #286f01, #20FF00);}
+
+/* Additional ToastX Color Classes */
+
+.toastx-yellow {
+    background-image: linear-gradient(to bottom left, #FFD700, #FFC107);
+	color:#000;
+}
+
+.toastx-gold {
+    background-image: linear-gradient(to bottom left, #C49E0B, #fae696);
+	color:#000;
+}
+
+.toastx-lime {
+    background-image: linear-gradient(to bottom left, #D6F400, #F9FFCA);
+	color:#000;
+}
+
+.toastx-red {
+    background-image: linear-gradient(to bottom left, #e14001, #9C2C01);
+}
+
+.toastx-grass {
+    background-image: linear-gradient(to bottom left, #369500, #9ECC00);
+}
+
+.toastx-chocolate {
+    background-image: linear-gradient(to bottom left, #5e3700, #a86000);
+}
+
+.toastx-teal {
+    background-image: linear-gradient(to bottom left, #006659, #00ceb1);
+}
+
+.toastx-blue {
+    background-image: linear-gradient(to bottom left, #0F4779, #1A7CD2);
+}
+
+.toastx-purple {
+    background-image: linear-gradient(to bottom left, #3b0082, #9d4bff);
+}
+
+.toastx-rosy {
+    background-image: linear-gradient(to bottom left, #b5015c, #ff0083);
+}
+
+.toastx-orange {
+    background-image: linear-gradient(to bottom left, #fb8200, #A65602);
+}
+
+.toastx-green {
+    background-image: linear-gradient(to bottom left, #286f01, #20FF00);
+}
+
+.toastx-skyblue {
+    background-image: linear-gradient(to bottom left, #87CEEB, #4682B4);
+    color: #000; /* For readability */
+}
+
+.toastx-emerald {
+    background-image: linear-gradient(to bottom left, #32CD32, #7CFC00);
+    color: #000; /* For readability */
+}
+
+.toastx-pink {
+    background-image: linear-gradient(to bottom left, #FF69B4, #FF1493);
+}
+
+.toastx-gray {
+    background-image: linear-gradient(to bottom left, #696969, #A9A9A9);
+}
+
+.toastx-black {
+    background-image: linear-gradient(to bottom left, #000000, #434343);
+}
+
+.toastx-white {
+    background-image: linear-gradient(to bottom left, #FFFFFF, #E8E8E8);
+    color: #000; /* For readability */
+}
+
+.toastx-maroon {
+    background-image: linear-gradient(to bottom left, #800000, #B03060);
+}
+
+.toastx-silver {
+    background-image: linear-gradient(to bottom left, #C0C0C0, #D3D3D3);
+    color: #000; /* For readability */
+}
+
+.toastx-navy {
+    background-image: linear-gradient(to bottom left, #000080, #191970);
+}
+
+.toastx-coral {
+    background-image: linear-gradient(to bottom left, #FF7F50, #FF6347);
+}
+
+.toastx-orange {
+    background-image: linear-gradient(to bottom left, #FFBF00, #FF9000);
+    color: #000; /* For readability */
+}
+
+.toastx-brown {
+    background-image: linear-gradient(to bottom left, #D2691E, #8B4513);
+}
+
+.toastx-olive {
+    background-image: linear-gradient(to bottom left, #808000, #556B2F);
+}
+
+.toastx-cyan {
+    background-image: linear-gradient(to bottom left, #00FFFF, #008B8B);
+}
+
+.toastx-spearmint {
+    background-image: linear-gradient(to bottom left, #98FF98, #00FA9A);
+    color: #000; /* For readability */
+}
+
+.toastx-indigo {
+    background-image: linear-gradient(to bottom left, #4B0082, #8A2BE2);
+}
+
+.toastx-peach {
+    background-image: linear-gradient(to bottom left, #FFDAB9, #FFB07C);
+    color: #000; /* For readability */
+}
+
+.toastx-violet {
+    background-image: linear-gradient(to bottom left, #E6E6FA, #B57EDC);
+	    color: #000; /* For readability */
+}
+
+.toastx-plum {
+    background-image: linear-gradient(to bottom left, #8E4585, #DDA0DD);
+}
+
+/* Gradient Classes */
+.toastx-ocean{background: linear-gradient(45deg, #1CB5E0 0%, #000851 100%)}
+.toastx-salad{background: linear-gradient(45deg, #00C9FF 0%, #92FE9D 100%)}
+.toastx-disco{background: linear-gradient(45deg, #FC466B 0%, #3F5EFB 100%)}
+.toastx-lane{background: linear-gradient(45deg, #3F2B96 0%, #A8C0FF 100%)}
+.toastx-wagon{background: linear-gradient(45deg, #FDBB2D 0%, #22C1C3 100%)}
+.toastx-fresco{background: linear-gradient(45deg, #FDBB2D 0%, #3A1C71 100%);}
+.toastx-cucumber{background: linear-gradient(45deg, #e3ffe7 0%, #d9e7ff 100%);color:#000;}
+.toastx-sea{background: linear-gradient(45deg, #4b6cb7 0%, #182848 100%);}
+.toastx-sawanna{background: linear-gradient(45deg, #9ebd13 0%, #008552 100%);}
+.toastx-gooey{background: linear-gradient(45deg, #0700b8 0%, #00ff88 100%);}
+.toastx-mimosa{background: linear-gradient(45deg, #d53369 0%, #daae51 100%);}
+.toastx-lilly{background: linear-gradient(45deg, #efd5ff 0%, #515ada 100%);}
+.toastx-aqua{background: linear-gradient(45deg, #00d2ff 0%, #3a47d5 100%);}
+.toastx-mellow{background: linear-gradient(45deg, #f8ff00 0%, #3ad59f 100%);}
+.toastx-cactus{background: linear-gradient(45deg, #f7d000 0%, #995d03 100%);}
+.toastx-mango{background: linear-gradient(45deg, #FDED00 0%, #FA7701 100%);}
+.toastx-xmas{background: linear-gradient(45deg, #FF0000 0%, #00FF00 100%);}
+.toastx-moon{background: linear-gradient(45deg, #DDDDDD 0%, #555555 100%);}
+.toastx-night{background: linear-gradient(45deg, #666666 0%, #000000 100%);}
+
+
+/* Animations */
+/* Toast opening animations */
+.toastx-animate-fade {
+    animation: toast-fade 0.4s ease-out forwards;
+}
+
+.toastx-animate-slide {
+    animation: toast-slide 0.4s ease-out forwards;
+}
+
+.toastx-animate-reveal {
+animation: blinker 0.2s linear 2;
+}
+
+.toastx-animate-wiggle {
+animation: toast-wiggle 1s linear 1;
+}
+
+.toastx-animate-blur {
+animation: toast-blur 0.4s ease-out forwards;
+}
+
+.toastx-animate-zoom {
+animation: toast-zoom 0.4s ease-out forwards;
+}
+
+.toastx-animate-flipx {
+animation: toast-flipx 0.4s ease-out forwards;
+}
+
+.toastx-animate-flipy {
+animation: toast-flipy 0.4s ease-out forwards;
+}
+
+.toastx-animate-flipz {
+animation: toast-flipz 0.4s ease-out forwards;
+}
+
+.toastx-animate-flipyz {
+animation: toast-flipyz 0.4s ease-out forwards;
+}
+
+.toastx-animate-flipxz {
+animation: toast-flipxz 0.4s ease-out forwards;
+}
+
+.toastx-animate-circle{
+border-radius:50%;
+color:transparent;
+max-width:100px;
+animation: blinker 0.4s ease-out 2;
+}
+
+.toastx-animate-circle .toastx-progress, .toastx-animate-circle-close .toastx-progress{display:none;}
+
+/* Toast closing animations */
+.toastx-animate-fade-close {
+animation: toast-fade 0.4s ease-out reverse forwards;
+}
+
+.toastx-animate-slide-close {
+animation: toast-slide 0.4s ease-out reverse forwards;
+}
+
+.toastx-animate-reveal-close {
+animation: blinker 0.2s linear infinite;
+}
+
+.toastx-animate-wiggle-close {
+animation: toast-wiggle 1s linear 2;
+}
+
+.toastx-animate-blur-close {
+animation: toast-blur 0.4s ease-out reverse forwards;
+}
+
+.toastx-animate-zoom-close {
+animation: toast-zoom 0.4s ease-out reverse forwards;
+}
+
+.toastx-animate-flipx-close {
+animation: toast-flipx 0.4s ease-out reverse forwards;
+}
+
+.toastx-animate-flipy-close {
+animation: toast-flipy 0.4s ease-out reverse forwards;
+}
+
+.toastx-animate-flipz-close {
+animation: toast-flipz 0.4s ease-out reverse forwards;
+}
+
+.toastx-animate-flipyz-close {
+animation: toast-flipyz 0.4s ease-out reverse forwards;
+}
+
+.toastx-animate-flipxz-close {
+animation: toast-flipxz 0.4s ease-out reverse forwards;
+}
+
+.toastx-animate-circle-close {
+border-radius:50%;
+color:transparent;
+max-width:100px;
+}
+
+/* Keyframes for animations */
+@keyframes toast-wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+@keyframes toast-fade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toast-slide {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes toast-blur {
+    0% {
+        filter: blur(10px);
+    }
+    50% {
+        filter: blur(4px);
+    }
+    100% {
+        filter: blur(0px);
+    }
+}
+
+@keyframes toast-zoom {
+    0% {
+        transform: scale(4); /* Use transform for scaling */
+        opacity: 0.01;
+    }
+    100% {
+        transform: scale(1); /* Back to normal size */
+        opacity: 1;
+    }
+}
+
+@keyframes toast-flipx {
+    0% {
+		opacity:0.1;
+        transform: scale(1.5) translateY(-60px) rotateX(0deg); /* Start with no rotation */
+    }
+    50% {
+		opacity:0.5;
+        transform:  scale(1.2) translateY(-30px) rotateX(90deg); /* Rotate halfway */
+    }
+    100% {
+		opacity:1;
+        transform:  scale(1) translateY(0) rotateX(0deg); /* Back to the original position */
+
+    }
+}
+
+
+@keyframes toast-flipy {
+    0% {
+        transform: scale(2) translateY(-60px) rotateY(180deg); /* Start with no rotation */
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.5) translateY(-30px) rotateY(90deg); /* Rotate halfway */
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1) translateY(0) rotateY(0deg); /* Back to the original position */
+        opacity: 1;
+    }
+}
+
+@keyframes toast-flipyz {
+    from {
+        transform: scale(4) rotateY(90deg) rotateZ(90deg); /* Start from a rotated YZ state */
+        opacity: 0; /* Start hidden */
+    }
+    to {
+        transform: scale(1) rotateY(0deg) rotateZ(0deg); /* End with no rotation */
+        opacity: 1; /* Fully visible */
+    }
+} 
+
+@keyframes toast-flipxz {
+    from {
+        transform: rotateX(90deg) rotateZ(90deg); /* Start from a rotated XZ state */
+        opacity: 0; /* Start hidden */
+    }
+    to {
+        transform: rotateX(0deg) rotateZ(0deg); /* End with no rotation */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes toast-flipz {
+    0% {
+        transform: scale(0.1) translateY(-200px) rotateZ(180deg); /* Start with no rotation */
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(0.5) translateY(-100px) rotateZ(45deg); /* Rotate halfway */
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1) translateY(0) rotateZ(0deg); /* Back to the original position */
+        opacity: 1;
+    }
+}
+
+@keyframes movebg {
+	0% {
+	  background-position: 10% 50%;
+	}
+	50% {
+	  background-position: 90% 50%;
+	}
+	100% {
+	  background-position: 10% 50%;
+	}
+}
+
+@keyframes blinker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes pausedx {
+  0% {
+    opacity: 0;
+  }
+    25%, 100% {
+    opacity: 1;
+  }
+}
+
+
+
+/* Default progress bar styles: flat color */
+.toastx-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.5);
+	border-top:1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Default progress bar */
+.toastx-progress-bar {
+    height: inherit;
+	width:100%;
+	background-repeat:no-repeat;
+}
+
+/* Custom striped bar */
+.toastx-stripes-bar {
+background-image: url(svg/stripes.svg);
+background-size: 15px 15px;
+background-position: 0 0;
+background-repeat:repeat-x;
+animation:toast-progress-move 15s linear infinite;
+}
+
+.toastx-shine-bar {
+background-image: linear-gradient(to right, transparent, #FFFFFF, transparent);
+background-size: 50px 10px;
+animation:toast-progress-move 2s linear infinite;
+}
+
+
+.toastx-rainbow-bar {
+background-image: linear-gradient(
+  to right, 
+  #FF871A 0%, 
+  #FF871A 20%, 
+  #D9FF00 20%, 
+  #D9FF00 40%, 
+  #00FFAC 40%, 
+  #00FFAC 60%, 
+  #2592FE 60%, 
+  #2592FE 80%, 
+  #C53EFF 80%, 
+  #C53EFF 100%
+);
+
+background-repeat:repeat-x;
+background-size: 300px 300px;
+animation:toast-progress-move 4s linear infinite;
+}
+
+.toastx-blocks-bar {
+background-image: linear-gradient(
+  to left, 
+  rgba(255, 255, 255, .4) 0%, 
+  rgba(255, 255, 255, .4) 50%, 
+  rgba(0, 0, 0, .4) 50%, 
+  rgba(0, 0, 0, .4) 100%
+);
+background-size: 15px 10px;
+background-repeat:repeat-x;
+background-position: center center;
+animation:toast-progress-move 15s linear infinite;
+}
+
+.toastx-flashing-bar {
+animation: blinker 0.5s linear infinite;
+}
+
+/* Animation for diagonal lines */
+@keyframes toast-progress-move {
+0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400px 0px;
+  }
+} 

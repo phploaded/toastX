@@ -88,13 +88,13 @@ function showNextToast(toastTypes, xtraClass='', index = 0) {
         }
 
         $.toastX('I am toast of <i>type</i> <b>' + toastTypes[index] + '</b>!', {
-            duration: 120*1000, // 1 hour for demo purpose
+            duration: 60*1000,
             type: toastTypes[index],
             additionalClass: xtraClass,
             position: position // Dynamically set position
         });
 
-        setTimeout(() => showNextToast(toastTypes, xtraClass, index + 1), 100); // Delay before the next toast
+        setTimeout(() => showNextToast(toastTypes, xtraClass, index + 1), 30); // Delay before the next toast
     }
 }
 
@@ -264,7 +264,7 @@ jQuery(document).ready(function ($) {
 			$.toastX('This toast is displayed at position <b>'+position+'</b>', {
 				position: position,
 				type: randomType, 
-				duration: 30000
+				duration: 10000
 			});
 		});
     });

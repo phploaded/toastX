@@ -345,7 +345,6 @@ max-width:100px;
 animation: blinker 0.4s ease-out 2;
 }
 
-.toastx-animate-circle .toastx-progress, .toastx-animate-circle-close .toastx-progress{display:none;}
 
 /* Toast closing animations */
 .toastx-animate-fade-close {

@@ -17,10 +17,12 @@
             'center-left', 'center-center', 'center-right',
             'bottom-left', 'bottom-center', 'bottom-right',
         ],
+
         init: function (options) {
             this.settings = $.extend(this.settings, options);
             this.createContainers();
         },
+
         createContainers: function () {
             if ($('.toastx-container').length) return;
 
@@ -29,6 +31,7 @@
                 .join('');
             $('body').append(containerHTML);
         },
+
         show: function (message, options = {}) {
             this.createContainers();
 
@@ -101,26 +104,9 @@
         // Remove all toasts from all positions or from a specific position
         removeAll: function (position = null) {
             if (position) {
-                const positionClass = `.toastx-${position} .toastx-toast`;
-                $(positionClass).each(function () {
-                    const $toast = $(this);
-                    const closeClass = $toast.attr('data-close-class');
-                    $toast.addClass(closeClass);
-
-                    setTimeout(() => {
-                        $toast.remove();
-                    }, 400); // Closing animation duration
-                });
+                $(`.toastx-${position}`).html('');
             } else {
-                $('.toastx-toast').each(function () {
-                    const $toast = $(this);
-                    const closeClass = $toast.attr('data-close-class');
-                    $toast.addClass(closeClass);
-
-                    setTimeout(() => {
-                        $toast.remove();
-                    }, 400); // Closing animation duration
-                });
+                $('.toastx-container').html('');
             }
         },
     };
